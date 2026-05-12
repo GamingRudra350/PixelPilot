@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Portfolio - PixelPilot{% endblock %}
+
+{% block content %}
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+        <h1 class="text-5xl font-bold text-center mb-16">Our Recent Work</h1>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for item in portfolios %}
+            <div class="bg-white rounded-3xl overflow-hidden shadow hover:shadow-xl transition">
+                <div class="relative">
+                    {% if item.before_image %}
+                    <img src="{{ item.before_image.url }}" class="w-full h-64 object-cover" alt="Before">
+                    {% endif %}
+                    <img src="{{ item.after_image.url }}" class="w-full h-64 object-cover border-t-4 border-blue-500" alt="After">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl">{{ item.title }}</h3>
+                    <p class="text-blue-600">{{ item.client }}</p>
+                    <p class="mt-4 text-gray-600">{{ item.result }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

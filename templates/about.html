@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}About PixelPilot - Digital Marketing Agency{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <h1 class="text-5xl font-bold text-center mb-8">About PixelPilot</h1>
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-xl text-gray-700 leading-relaxed">
+                {{ company.about_story|safe }}
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Our Mission</h2>
+        <div class="max-w-3xl mx-auto bg-white p-10 rounded-3xl shadow">
+            <p class="text-lg leading-relaxed text-gray-700">
+                {{ company.mission|safe }}
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

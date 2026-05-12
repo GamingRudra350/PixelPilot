@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}PixelPilot - Digital Marketing Agency{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section - Fixed Blue Background -->
+<section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-28">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+            Grow Your Business with<br>
+            <span class="text-blue-200">Powerful Advertising</span>
+        </h1>
+        <p class="mt-6 text-xl md:text-2xl max-w-3xl mx-auto text-blue-100">
+            We specialize in Social Media Advertising & Eye-catching Poster Campaigns that deliver real results.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
+            <a href="/contact/" 
+               class="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition">
+                Book Free Consultation
+            </a>
+            <a href="/portfolio/" 
+               class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-700 transition">
+                View Our Work
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Services Highlight -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+            Our Top Services
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            {% for service in services %}
+            <div class="bg-white p-8 rounded-3xl shadow hover:shadow-xl transition">
+                <i class="{{ service.icon }} text-5xl text-blue-600 mb-6"></i>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">{{ service.name }}</h3>
+                <p class="text-gray-600">{{ service.short_desc }}</p>
+                <a href="/services/" class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-700">
+                    Learn More →
+                </a>
+            </div>
+            {% empty %}
+            <p class="col-span-3 text-center text-gray-500 py-10">
+                No services added yet.<br>
+                Please add services from the Admin Panel.
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-blue-700 text-white py-16 text-center">
+    <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-4">
+            Ready to Take Your Brand to the Next Level?
+        </h2>
+        <a href="/contact/" 
+           class="inline-block bg-white text-blue-700 px-10 py-5 rounded-full text-xl font-semibold hover:bg-gray-100 mt-6">
+            Get Your Free Strategy Session
+        </a>
+    </div>
+</section>
+
+{% endblock %}

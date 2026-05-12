@@ -1,0 +1,26 @@
+/* Custom CSS for PixelPilot */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-bg {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 
+                0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
